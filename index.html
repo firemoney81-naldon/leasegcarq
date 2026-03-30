@@ -1,23 +1,541 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+  <!-- JSON-LD Structured Data for SEO (AI Agent Friendly) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "X7 리스 가격 비교 및 장기렌트 견적 추천",
+      "description": "2024년 BMW X7 리스 및 장기렌트 가격 비교, 견적, 장단점 분석. 합리적인 X7 리스 비용, 프로모션 할인 정보, 내돈내산 후기 등 전문가의 A to Z 가이드.",
+      "url": "https://yourdomain.com",
+      "publisher": {
+        "@type": "Organization",
+        "name": "X7 리스/장기렌트 전문 비교 센터",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourdomain.com/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "Service",
+        "serviceType": "BMW X7 리스 및 장기렌트 비교 견적 서비스",
+        "provider": {
+          "@type": "Organization",
+          "name": "X7 리스/장기렌트 전문 비교 센터",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+82-10-1234-5678",
+            "contactType": "고객 서비스"
+          }
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "대한민국"
+        },
+        "description": "BMW X7 모델에 대한 리스 및 장기렌트 상품을 비교하고, 최적의 조건과 견적을 안내하는 전문 서비스입니다.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "BMW X7 리스 및 장기렌트 상품",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "X7 리스 (운용리스)"
+              },
+              "description": "초기 비용 부담을 줄이고자 하는 개인 사업자 및 법인을 위한 금융 상품입니다. 월 리스료 전액 비용 처리가 가능합니다."
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "X7 장기렌트"
+              },
+              "description": "보험, 세금, 정비까지 모두 포함하여 월 렌탈료만 납부하면 되는 간편한 상품입니다. 주행 거리가 많은 고객에게 유리합니다."
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "X7 장기렌트 (무보증)"
+              },
+              "description": "초기 보증금 없이 진행 가능한 상품으로 초기 부담을 최소화합니다."
+            }
+          ]
+        }
+      }
+    }
+    </script>
+
+    <style>
+      :root {
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+        --text-color: #333;
+        --header-bg: #1e3a5f;
+        --highlight-color: #ffc107;
+      }
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+      }
+      header {
+        background-color: var(--header-bg);
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: 700;
+      }
+      header p {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        opacity: 0.9;
+      }
+      nav {
+        background-color: #2c4a75;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        display: block;
+        padding: 1rem 1.5rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      nav a:hover {
+        background-color: var(--primary-color);
+        color: var(--highlight-color);
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      section {
+        background-color: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        color: var(--header-bg);
+        border-bottom: 3px solid var(--highlight-color);
+        padding-bottom: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+      .keyword-tags {
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .keyword-tags a {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        border: 1px solid #dee2e6;
+      }
+      .keyword-tags a:hover {
+        background-color: #e9ecef;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+        background-color: #fcfcfc;
+      }
+      th, td {
+        padding: 1rem;
+        border: 1px solid #e9ecef;
+        text-align: left;
+      }
+      th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 500;
+        text-align: center;
+      }
+      td:first-child {
+        font-weight: 500;
+      }
+      .cta-button {
+        display: inline-block;
+        background-color: var(--highlight-color);
+        color: black;
+        font-weight: 700;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        margin: 1rem auto;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        width: fit-content;
+        box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+      }
+      .cta-button:hover {
+        background-color: #e0a800;
+        transform: translateY(-2px);
+      }
+      .faq-list {
+        list-style: none;
+        padding: 0;
+      }
+      .faq-item dt {
+        background-color: #f1f7fe;
+        color: var(--primary-color);
+        font-weight: 600;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .faq-item dt:hover {
+        background-color: #e0f0ff;
+      }
+      .faq-item dd {
+        margin-left: 0;
+        padding: 1rem;
+        border-left: 3px solid var(--primary-color);
+        background-color: #fdfdfd;
+        display: none;
+      }
+      .faq-item dt.active + dd {
+        display: block;
+      }
+      .image-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .alert-box {
+        background-color: #fef1e1;
+        border: 1px solid #ffaa42;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        font-weight: 500;
+        color: #855b2d;
+      }
+      .external-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .external-link:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #777;
+        background-color: #f0f0f0;
+        margin-top: 2rem;
+      }
+      @media (max-width: 768px) {
+        header h1 { font-size: 2rem; }
+        nav ul { flex-direction: column; }
+        nav a { padding: 0.8rem 1rem; }
+        main { padding: 0 1rem; }
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BMW X7 리스 & 장기렌트 가격 비교 및 최저가 견적 추천</h1>
+        <p>2024년 최신 프로모션 정보부터 2026년 가격 동향 예측까지, X7 구매의 모든 것을 알려드립니다.</p>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#intro">X7 리스/렌트 소개</a></li>
+            <li><a href="#price-guide">가격 및 견적 비교</a></li>
+            <li><a href="#pros-cons">장점과 단점</a></li>
+            <li><a href="#reviews">내돈내산 후기</a></li>
+            <li><a href="#faq">자주 묻는 질문</a></li>
+        </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <section id="intro">
+            <h2>프리미엄 대형 SUV, BMW X7 리스 & 장기렌트 A to Z</h2>
+            <p><strong>BMW X7</strong>은 압도적인 존재감과 럭셔리한 실내 공간, 최첨단 기술로 국내 대형 SUV 시장의 기준을 높이고 있습니다. 이러한 프리미엄 차량을 합리적인 비용으로 소유하는 방법으로 <strong>X7 리스</strong>와 <strong>X7 장기렌트</strong>가 각광받고 있습니다. 단순한 구매를 넘어, 비용 효율성과 편리성을 중시하는 스마트 컨슈머들이 <strong>X7 리스 견적</strong>을 비교하는 추세입니다.</p>
+
+            <div class="alert-box">
+                <strong>잠깐!</strong> X7 리스나 장기렌트를 고민할 때 가장 중요한 것은 '개인의 상황에 맞는 최적의 금융 상품'을 찾는 것입니다. 단순히 <strong>X7 싼곳</strong>을 찾는 것보다, 월 납입금, 초기 비용, 보험, 정비 조건 등을 종합적으로 고려해야 합니다.
+            </div>
+
+            <p>저희는 수많은 <strong>X7 전문 업체</strong>들의 상품을 객관적으로 비교 분석하여, 고객님께 가장 유리한 <strong>X7 가격</strong>을 제시합니다. <strong>신규 가입 혜택</strong>이나 <strong>현금 지원</strong> 등 놓치기 쉬운 프로모션 정보까지 꼼꼼하게 안내해 드립니다. 2024년 현재, 고금리 시대에 차량 구매 비용을 아낄 수 있는 최선의 선택은 리스나 장기렌트를 통한 현명한 소비입니다.</p>
+
+            <h3>X7 리스와 장기렌트, 어떤 차이점이 있을까?</h3>
+            <p>대부분의 고객님들이 <strong>X7 리스</strong>와 <strong>X7 장기렌트</strong>의 <strong>차이점</strong>을 궁금해하십니다. 두 상품 모두 일정 기간 동안 차량을 빌려 타는 방식이지만, 몇 가지 핵심적인 차이점이 있습니다. 리스는 '금융 상품'으로 분류되어 개인의 신용도에 영향을 미치며, 번호판에 '하, 허, 호'가 아닌 일반 번호판을 사용합니다. 반면 장기렌트는 '렌탈 상품'으로, 보험이나 정비 등 모든 부대 비용이 월 렌탈료에 포함되어 관리가 매우 편리하며, 주행 거리가 많은 고객에게 <strong>장점</strong>이 있습니다.</p>
+
+            <div class="image-container">
+                <!-- Pexels.com에서 "luxury car interior" 또는 "large SUV" 키워드로 이미지 검색 후 사용 권장 -->
+                <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="고급 SUV 내부 이미지" loading="lazy">
+                <p>프리미엄 대형 SUV, BMW X7의 럭셔리한 실내 공간.</p>
+            </div>
+
+            <div class="keyword-tags" aria-label="연관 키워드">
+                <a href="#price-guide">X7 리스 가격</a>
+                <a href="#pros-cons">X7 리스 장단점</a>
+                <a href="#price-guide">X7 장기렌트 비용</a>
+                <a href="#reviews">X7 내돈내산 후기</a>
+                <a href="#faq">X7 리스 견적 문의</a>
+                <a href="#price-guide">X7 프로모션 할인</a>
+                <a href="#pros-cons">리스 vs 렌트 차이점</a>
+                <a href="#price-guide">X7 무보증 리스</a>
+                <a href="#contact">X7 신규 혜택</a>
+            </div>
+        </section>
+
+        <section id="price-guide">
+            <h2>X7 리스/장기렌트 가격 및 견적 가이드: 2024년 최신 동향 분석</h2>
+            <p>X7 리스 견적은 차량 모델, 옵션, 계약 기간, 초기 보증금/선납금 여부, 잔존가치 설정, 주행거리 제한 등 다양한 요소에 따라 달라집니다. 특히 <strong>X7 할인</strong> 프로모션이 적용되는 시기에 계약하면 <strong>저렴한곳</strong>에서 <strong>X7 비용</strong>을 절감할 수 있습니다.</p>
+
+            <div class="alert-box">
+                <strong>2026년 가격 예측:</strong> 2026년에는 글로벌 원자재 가격 변동과 환율 영향으로 수입차 가격이 소폭 상승하거나 유지될 것으로 예상됩니다. 또한, 친환경 정책에 따라 내연기관 차량에 대한 세금 정책이 강화될 수 있어, 현재 2024년에 계약하는 것이 상대적으로 유리할 수 있습니다.
+            </div>
+
+            <h3>모델별 월 납입금 평균 (대략적인 가격)</h3>
+            <p>아래 표는 2024년 6월 기준 <strong>X7 평균 가격</strong>을 바탕으로 산출한 대략적인 월 납입금 <strong>예상 금액</strong>입니다. 정확한 <strong>X7 견적</strong>은 실시간 프로모션과 고객님의 신용도에 따라 변동되므로, 반드시 상담을 통해 확인하시기 바랍니다. 특히 <strong>X7 무보증 리스</strong> 상품의 경우 보증금을 납부하는 상품보다 월 납입금이 다소 높게 책정될 수 있습니다.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>모델</th>
+                        <th>차량 가격 (원)</th>
+                        <th>월 리스료 (원) <br>(보증금 30%, 48개월 기준)</th>
+                        <th>월 장기렌트료 (원) <br>(무보증, 48개월 기준)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BMW X7 xDrive40i</td>
+                        <td>14,000만원 ~ 15,000만원</td>
+                        <td>1,400,000 ~ 1,550,000</td>
+                        <td>1,800,000 ~ 1,950,000</td>
+                    </tr>
+                    <tr>
+                        <td>BMW X7 xDrive40d</td>
+                        <td>14,500만원 ~ 15,500만원</td>
+                        <td>1,450,000 ~ 1,600,000</td>
+                        <td>1,850,000 ~ 2,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>BMW X7 M60i</td>
+                        <td>18,000만원 ~ 19,000만원</td>
+                        <td>1,800,000 ~ 2,000,000</td>
+                        <td>2,300,000 ~ 2,500,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>X7 리스 견적 비교 핵심 요소</h3>
+            <p><strong>X7 리스</strong> 계약 시 체크해야 할 <strong>장단점</strong> 비교를 위한 핵심 요소들입니다.</p>
+            <ul>
+                <li><strong>초기 비용 (보증금/선납금):</strong> 초기 비용을 많이 납부할수록 월 납입금은 줄어듭니다. 보증금은 만기 시 환급받는 금액이고, 선납금은 미리 내는 금액이므로 만기 시 환급되지 않습니다. 초기 부담이 적은 <strong>무보증 리스</strong>도 선택 가능합니다.</li>
+                <li><strong>계약 기간:</strong> 보통 36개월, 48개월, 60개월 중 선택합니다. 계약 기간이 길어질수록 월 납입금은 낮아지지만, 총 이자 비용은 증가할 수 있습니다.</li>
+                <li><strong>잔존가치:</strong> 계약 만기 시 차량의 예상 가치입니다. 잔존가치를 높게 설정하면 월 납입금이 낮아지지만, 만기 시 인수 비용이 증가합니다. 리스사별로 잔존가치 책정 기준이 달라지므로 <strong>X7 견적 비교</strong>가 필수입니다.</li>
+                <li><strong>보험 및 정비:</strong> 장기렌트의 경우 보험료와 정비 비용이 포함되지만, 리스는 고객이 직접 가입해야 합니다. <strong>리스 vs 장기렌트 차이점</strong>을 확실히 이해하고 선택해야 합니다.</li>
+            </ul>
+
+            <a href="#contact" class="cta-button" aria-label="BMW X7 리스 최저가 견적 문의">실시간 최저가 견적 문의하기</a>
+        </section>
+
+        <section id="pros-cons">
+            <h2>X7 리스 vs 장기렌트, 장점과 단점 심층 비교</h2>
+            <p>BMW X7 구매 방법 중 <strong>리스</strong>와 <strong>장기렌트</strong>는 각각 뚜렷한 <strong>장점</strong>과 <strong>단점</strong>을 가집니다. 개인의 운행 스타일과 경제적 상황에 따라 더 적합한 상품이 달라집니다. 어떤 상품이 고객님께 <strong>추천</strong>되는지 확인해 보세요.</p>
+
+            <h3>1. X7 운용리스 (Financial Lease)의 장점과 단점</h3>
+            <ul>
+                <li><strong>장점 (Pros):</strong>
+                    <ul>
+                        <li><strong>번호판:</strong> 일반 번호판 사용으로 품위 유지에 유리합니다. 고급차를 운행하는 분들이 <strong>리스</strong>를 선호하는 가장 큰 이유 중 하나입니다.</li>
+                        <li><strong>비용 처리:</strong> 개인 사업자 및 법인의 경우 월 리스료 전액을 손비 처리하여 세금 절감 효과를 극대화할 수 있습니다.</li>
+                        <li><strong>취득세/공채:</strong> 차량 구매 시 발생하는 취득세와 공채가 리스료에 분할되어 있어 초기 부담이 적습니다.</li>
+                        <li><strong>보험:</strong> 본인의 보험 경력을 유지할 수 있으며, 기존 보험료 할인 혜택을 그대로 적용받을 수 있습니다.</li>
+                    </ul>
+                </li>
+                <li><strong>단점 (Cons):</strong>
+                    <ul>
+                        <li><strong>잔존가치 및 승계:</strong> 만기 시 잔존가치에 따라 인수 비용이 결정되며, 중도 해지 시 위약금이 높을 수 있습니다.</li>
+                        <li><strong>보험료:</strong> 보험료를 직접 납부해야 하며, 사고 시 보험료 할증이 발생합니다.</li>
+                        <li><strong>신용도 영향:</strong> 대출 상품으로 분류되어 신용도에 영향을 미칠 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2. X7 장기렌트의 장점과 단점</h3>
+            <ul>
+                <li><strong>장점 (Pros):</strong>
+                    <ul>
+                        <li><strong>초기 비용 0원:</strong> <strong>무보증 장기렌트</strong>가 보편화되어 초기 비용 부담이 전혀 없습니다.</li>
+                        <li><strong>편리한 관리:</strong> 보험료, 자동차세, 정비 비용이 모두 월 렌탈료에 포함됩니다. 차량 관리에 신경 쓸 필요가 없어 편리합니다.</li>
+                        <li><strong>사고 시 면책:</strong> 사고가 발생해도 보험료 할증이 없으며, 사고 처리가 간편합니다.</li>
+                        <li><strong>신용도 영향 최소화:</strong> 대출로 잡히지 않아 신용도에 미치는 영향이 적습니다.</li>
+                    </ul>
+                </li>
+                <li><strong>단점 (Cons):</strong>
+                    <ul>
+                        <li><strong>번호판:</strong> '하, 허, 호' 번호판 사용으로, 고급차의 경우 일부 고객에게 단점으로 작용할 수 있습니다.</li>
+                        <li><strong>보험 경력 단절:</strong> 렌트사 명의로 보험이 가입되므로, 개인 보험 경력이 단절될 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="alert-box">
+                <strong>전문가의 조언:</strong> 주행 거리가 길고 차량 관리에 신경 쓰고 싶지 않은 분들은 장기렌트가 유리합니다. 반면, 일반 번호판을 원하고 신용도가 좋으며 보험 경력이 있는 분들은 리스가 유리합니다.
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>X7 리스 내돈내산 후기: 실제 이용자의 생생한 경험담</h2>
+            <p><strong>X7 리스</strong>를 결정하기 전에 실제 이용자들이 남긴 <strong>내돈내산 후기</strong>를 참고하는 것은 매우 중요합니다. 여러 커뮤니티(네이버 카페, 디시인사이드 등)에서 다양한 <strong>X7 리스 후기</strong>를 접할 수 있습니다. 고객님들의 만족도 높은 후기를 바탕으로 <strong>X7 추천 업체</strong>를 선정해 드립니다.</p>
+
+            <h3>고객 후기 1: 사업자 절세 효과를 본 김OO님 (40대, 사업가)</h3>
+            <p>"BMW X7을 구매할 때 리스를 선택한 가장 큰 이유는 세금 혜택 때문이었습니다. <strong>X7 리스 비용</strong> 전체를 사업 비용으로 처리할 수 있어 연말정산 시 큰 절세 효과를 보았습니다. 처음에는 <strong>X7 가격</strong>이 부담스러웠지만, <strong>X7 전문 업체</strong>의 상담을 통해 <strong>평균</strong>적인 리스료와 <strong>할인</strong> 조건을 확인하고 예상보다 저렴하게 진행할 수 있었습니다. <strong>신규 가입 혜택</strong>으로 <strong>상품권</strong>도 받았습니다."</p>
+
+            <h3>고객 후기 2: 편리성을 추구한 이OO님 (30대, 직장인)</h3>
+            <p>"저는 차량 관리에 신경 쓰는 것을 싫어해서 <strong>X7 장기렌트</strong>를 선택했습니다. <strong>장점</strong>은 정기적인 정비 서비스가 포함되어 있어 신경 쓸 것이 없다는 점입니다. <strong>단점</strong>이라면 번호판이 '허'로 시작한다는 점이었는데, X7 같은 대형 SUV는 요즘 렌트 번호판도 많이들 타서 크게 신경 쓰이지 않더라고요. <strong>X7 견적 비교</strong>를 여러 곳에서 해봤는데, <strong>저렴한곳</strong>보다는 <strong>전문 업체</strong>의 <strong>추천</strong>을 받아 진행했습니다."</p>
+
+            <h3>실시간 X7 리스 프로모션 현황</h3>
+            <p>BMW X7 모델은 분기별, 월별로 다양한 프로모션을 진행합니다. 특히 연말이나 재고 소진 시기에는 <strong>X7 할인</strong> 폭이 커지므로, 정확한 견적을 통해 <strong>X7 싼곳</strong>을 찾는 것이 중요합니다. <strong>신규 가입</strong> 고객에게는 <strong>현금 지원</strong>이나 <strong>사은품</strong>을 제공하는 이벤트도 진행 중입니다.</p>
+
+            <div class="alert-box">
+                <strong>검색 키워드 분석 (Naver/Google Trends):</strong> 2024년 6월 현재, <strong>네이버</strong> 검색 트렌드에서는 "X7 리스 vs 장기렌트" <strong>비교</strong> 검색량이 꾸준히 높습니다. 또한 <strong>구글</strong>과 <strong>유튜브</strong>에서도 "X7 리뷰"와 "X7 <strong>내돈내산</strong>" 영상이 인기가 많으며, <strong>AI</strong> 에이전트(<strong>Gemini</strong>, <strong>ChatGPT</strong>)를 활용한 <strong>X7 가격</strong> 예측 시뮬레이션도 등장하고 있습니다.
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <p>X7 리스 및 장기렌트에 대해 고객님들이 가장 궁금해하는 질문들을 모아봤습니다.</p>
+            <dl class="faq-list">
+                <div class="faq-item">
+                    <dt tabindex="0" aria-expanded="false">Q1. X7 리스 가입 조건이 궁금합니다. 신용도 기준은 어떻게 되나요?</dt>
+                    <dd>A1. <strong>X7 리스</strong>는 금융 상품이므로, 리스 심사 기준에 따라 신용도 평가를 거칩니다. 보통 나이스(NICE) 또는 올크레딧(KCB) 기준 700점~800점 이상이어야 승인될 확률이 높습니다. 신용도가 낮더라도 <strong>X7 리스 전문 업체</strong>와 상담 시 보증금 상향, 공동 보증인 설정 등으로 승인 가능성을 높일 수 있습니다. (참조: <a href="https://www.credit.or.kr/" target="_blank" class="external-link">신용정보원</a>)</dd>
+                </div>
+                <div class="faq-item">
+                    <dt tabindex="0" aria-expanded="false">Q2. X7 리스 견적을 받을 때 필요한 서류는 무엇인가요?</dt>
+                    <dd>A2. 개인의 경우 신분증 사본, 운전면허증 사본, 소득 증빙 서류(근로소득 원천징수 영수증, 사업자 소득 증빙 등)가 필요합니다. 법인의 경우 사업자등록증, 법인 인감증명서, 법인 등기부등본, 재무제표 등이 필요합니다. <strong>X7 리스 전문 업체</strong>에 문의하시면 필요한 서류 목록을 상세히 안내받을 수 있습니다.</dd>
+                </div>
+                <div class="faq-item">
+                    <dt tabindex="0" aria-expanded="false">Q3. X7 리스 만기 시 선택할 수 있는 옵션은 무엇인가요?</dt>
+                    <dd>A3. <strong>X7 리스</strong> 만기 시에는 크게 세 가지 선택지가 있습니다. 1) 차량 인수: 잔존가치를 납부하고 차량을 완전히 소유합니다. 2) 차량 반납: 차량을 반납하고 계약을 종료합니다. 3) 재리스: 계약 기간을 연장하여 계속 운행합니다. <strong>X7 장단점</strong> 비교 시, 만기 시점의 차량 상태와 시장 가격을 고려하여 유리한 선택을 해야 합니다.</dd>
+                </div>
+                <div class="faq-item">
+                    <dt tabindex="0" aria-expanded="false">Q4. X7 리스 중도 해지 시 위약금은 얼마나 되나요?</dt>
+                    <dd>A4. <strong>X7 리스</strong> 계약 중도 해지 시에는 일반적으로 총 리스료의 일정 비율에 해당하는 위약금이 발생합니다. 계약 기간이 많이 남아있을수록 위약금 <strong>금액</strong>은 커집니다. 중도 해지를 피하기 위해 계약 전 신중한 <strong>비교</strong>가 필요하며, 불가피할 경우 승계자를 찾는 것이 유리합니다. (참조: <a href="https://www.fss.or.kr/" target="_blank" class="external-link">금융감독원</a>)</dd>
+                </div>
+                <div class="faq-item">
+                    <dt tabindex="0" aria-expanded="false">Q5. X7 장기렌트 계약 시 주행거리 제한은 어떻게 설정해야 하나요?</dt>
+                    <dd>A5. <strong>X7 장기렌트</strong>는 연간 주행거리 제한(보통 1만km~4만km)이 있습니다. 주행거리 제한을 높게 설정할수록 <strong>X7 비용</strong>이 증가합니다. 평소 운행 거리를 정확히 파악하여 계약해야 만기 시 초과 주행에 따른 위약금을 피할 수 있습니다. <strong>AI</strong> 에이전트(<strong>ChatGPT</strong> 또는 <strong>Gemini</strong>)를 통해 예상 주행거리 시뮬레이션을 해보는 것도 좋은 방법입니다. (참조: <a href="https://www.kostat.go.kr/" target="_blank" class="external-link">통계청</a> - 통계자료 활용)</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="contact">
+            <h2>X7 리스 & 장기렌트 맞춤 견적 신청</h2>
+            <p><strong>X7 가격</strong>에 대한 정확한 <strong>견적</strong>을 받아보고 싶으신가요? <strong>X7 리스</strong>는 <strong>전문 업체</strong>마다 <strong>할인</strong> 조건이 다르고, 개인의 상황에 따라 <strong>비용</strong>이 크게 달라집니다. 아래 문의 양식에 정보를 남겨주시면, 고객님의 조건에 맞는 <strong>최저가 견적</strong>을 찾아드립니다.</p>
+            <form action="#" method="POST" class="quote-form">
+                <div class="form-group">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">연락처:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="model">희망 모델 (BMW X7):</label>
+                    <select id="model" name="model" required>
+                        <option value="">모델 선택</option>
+                        <option value="x7_40i">X7 xDrive40i</option>
+                        <option value="x7_40d">X7 xDrive40d</option>
+                        <option value="x7_m60i">X7 M60i</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="type">희망 상품:</label>
+                    <select id="type" name="type" required>
+                        <option value="">선택</option>
+                        <option value="lease">X7 리스</option>
+                        <option value="rental">X7 장기렌트</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">추가 문의 사항:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">무료 견적 요청</button>
+            </form>
+            <p><strong>개인정보 보호 정책:</strong> 고객님의 소중한 정보는 견적 상담 외 다른 용도로 사용되지 않습니다.</p>
+
+            <h3>X7 리스 관련 외부 신뢰성 자료</h3>
+            <p>X7 리스 및 장기렌트에 대해 더 깊이 있는 정보를 원하시면 다음 신뢰할 수 있는 외부 자료를 참고하십시오.</p>
+            <ul>
+                <li><a href="https://namu.wiki/w/BMW%20X7" target="_blank" class="external-link">나무위키 - BMW X7</a>: BMW X7 모델의 상세 스펙 및 역사 정보</li>
+                <li><a href="https://www.bmw.co.kr/" target="_blank" class="external-link">BMW 코리아 공식 홈페이지</a>: X7 모델의 공식 정보 및 프로모션 안내</li>
+                <li><a href="https://www.koreatimes.co.kr/" target="_blank" class="external-link">한국일보 자동차 섹션</a>: 국내 자동차 시장 동향 및 수입차 판매 기사</li>
+                <li><a href="https://www.autotrade.co.kr/" target="_blank" class="external-link">오토트레이드</a>: 중고차 잔존가치 및 시세 정보 (만기 시점 예상 가격 참고)</li>
+                <li><a href="https://www.law.go.kr/" target="_blank" class="external-link">법제처</a>: 리스 및 장기렌트 관련 법률 정보 (여신전문금융업법 등)</li>
+            </ul>
+        </section>
+
     </main>
-  </body>
-</html>
+
+    <script>
+      // FAQ 아코디언 기능 (접기/펼치기)
+      document.querySelectorAll('dl dt').forEach((dt) => {
+        dt.addEventListener('click', () => {
+          dt.classList.toggle('active');
+          let expanded = dt.getAttribute('aria-expanded') === 'true';
+          dt.setAttribute('aria-expanded', !expanded);
+        });
+        dt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            dt.click();
+          }
+        });
+      });
+    </script>
+  
